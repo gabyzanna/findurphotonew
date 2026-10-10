@@ -1,452 +1,164 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Studio Photobooth — FindurPhoto</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="studio-page">
-
     <header class="site-header studio-header">
-
         <a class="brand" href="index.html">
             <span class="brand-mark">F</span>
-            <span>
-                Findur<span class="pink">Photo</span>
-            </span>
+            <span>Findur<span class="pink">Photo</span></span>
         </a>
-
-        <nav>
-            <a href="index.html">← Kembali ke Beranda</a>
-        </nav>
-
-        <span class="studio-status">
-            <span></span>
-            PHOTO STUDIO
-        </span>
-
+        <nav><a href="index.html">← Kembali ke Beranda</a></nav>
+        <span class="studio-status"><span></span> PHOTO STUDIO</span>
     </header>
 
     <main class="studio-wrap">
-
         <div class="studio-title">
-
             <div>
                 <span class="eyebrow">LET'S MAKE MEMORIES</span>
-
-                <h1>
-                    Photobooth <span class="pink">Studio</span>
-                </h1>
-
-                <p>
-                    Atur layout, ambil foto, dan download hasil favoritmu.
-                </p>
+                <h1>Photobooth <span class="pink">Studio</span></h1>
+                <p>Atur layout, ambil foto, dan download hasil favoritmu.</p>
             </div>
-
-            <button
-                class="button button-light"
-                id="resetAll"
-                type="button"
-            >
-                Mulai Ulang ↻
-            </button>
-
+            <button class="button button-light" id="resetAll" type="button">Mulai Ulang ↻</button>
         </div>
 
         <div class="studio-toolbar">
-
-            <span class="toolbar-pill">
-                Layout:
-                <strong id="layoutName">Classic Strip</strong>
-            </span>
-
+            <span class="toolbar-pill">Layout: <strong id="layoutName">Classic Strip</strong></span>
             <label class="button button-pink upload-button">
                 ＋ Unggah Foto
-
-                <input
-                    id="uploadInput"
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    hidden
-                >
+                <input id="uploadInput" type="file" accept="image/*" multiple hidden>
             </label>
-
         </div>
 
         <div class="studio-grid">
-
             <aside class="panel layout-panel">
-
-                <div class="panel-heading">
-                    <span>01</span>
-                    <h2>Pilih Layout</h2>
-                </div>
-
-                <p class="muted">
-                    Pilih jumlah foto untuk strip kamu.
-                </p>
+                <div class="panel-heading"><span>01</span><h2>Pilih Layout</h2></div>
+                <p class="muted">Pilih jumlah foto untuk strip kamu.</p>
 
                 <div class="layout-options" id="layoutOptions">
-
-                    <button
-                        class="layout-option active"
-                        data-count="4"
-                        type="button"
-                    >
-                        <span class="layout-icon vertical four">
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                        </span>
-
-                        <strong>4 Foto</strong>
-                        <small>Classic strip</small>
+                    <button class="layout-option active" data-count="4" type="button">
+                        <span class="layout-icon vertical four"><i></i><i></i><i></i><i></i></span>
+                        <strong>4 Foto</strong><small>Classic strip</small>
                     </button>
-
-                    <button
-                        class="layout-option"
-                        data-count="3"
-                        type="button"
-                    >
-                        <span class="layout-icon vertical three">
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                        </span>
-
-                        <strong>3 Foto</strong>
-                        <small>Mini strip</small>
+                    <button class="layout-option" data-count="3" type="button">
+                        <span class="layout-icon vertical three"><i></i><i></i><i></i></span>
+                        <strong>3 Foto</strong><small>Mini strip</small>
                     </button>
-
-                    <button
-                        class="layout-option"
-                        data-count="2"
-                        type="button"
-                    >
-                        <span class="layout-icon horizontal two">
-                            <i></i>
-                            <i></i>
-                        </span>
-
-                        <strong>2 Foto</strong>
-                        <small>Double shot</small>
+                    <button class="layout-option" data-count="2" type="button">
+                        <span class="layout-icon horizontal two"><i></i><i></i></span>
+                        <strong>2 Foto</strong><small>Double shot</small>
                     </button>
-
-                    <button
-                        class="layout-option"
-                        data-count="6"
-                        type="button"
-                    >
-                        <span class="layout-icon vertical six">
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                        </span>
-
-                        <strong>6 Foto</strong>
-                        <small>Long strip</small>
+                    <button class="layout-option" data-count="6" type="button">
+                        <span class="layout-icon vertical six"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                        <strong>6 Foto</strong><small>Long strip</small>
                     </button>
-
                 </div>
 
                 <div class="panel-divider"></div>
-
-                <div class="panel-heading">
-                    <span>02</span>
-                    <h2>Warna Strip</h2>
-                </div>
-
+                <div class="panel-heading"><span>02</span><h2>Warna Strip</h2></div>
                 <div class="color-options">
-
-                    <button
-                        class="color-choice active"
-                        data-color="#fffafc"
-                        aria-label="Putih"
-                        style="--swatch: #fffafc"
-                        type="button"
-                    ></button>
-
-                    <button
-                        class="color-choice"
-                        data-color="#ffd7e8"
-                        aria-label="Pink"
-                        style="--swatch: #ffd7e8"
-                        type="button"
-                    ></button>
-
-                    <button
-                        class="color-choice"
-                        data-color="#e6ddff"
-                        aria-label="Lilac"
-                        style="--swatch: #e6ddff"
-                        type="button"
-                    ></button>
-
-                    <button
-                        class="color-choice"
-                        data-color="#dff3e5"
-                        aria-label="Mint"
-                        style="--swatch: #dff3e5"
-                        type="button"
-                    ></button>
-
-                    <button
-                        class="color-choice"
-                        data-color="#22202a"
-                        aria-label="Hitam"
-                        style="--swatch: #22202a"
-                        type="button"
-                    ></button>
-
+                    <button class="color-choice active" data-color="#fffafc" aria-label="Putih" style="--swatch:#fffafc" type="button"></button>
+                    <button class="color-choice" data-color="#ffd7e8" aria-label="Pink" style="--swatch:#ffd7e8" type="button"></button>
+                    <button class="color-choice" data-color="#e6ddff" aria-label="Lilac" style="--swatch:#e6ddff" type="button"></button>
+                    <button class="color-choice" data-color="#dff3e5" aria-label="Mint" style="--swatch:#dff3e5" type="button"></button>
+                    <button class="color-choice" data-color="#22202a" aria-label="Hitam" style="--swatch:#22202a" type="button"></button>
                 </div>
 
                 <div class="panel-divider"></div>
+                <div class="panel-heading"><span>03</span><h2>Template Strip</h2></div>
+                <p class="muted">Pilih desain untuk hasil photo strip kamu.</p>
 
-                <div class="panel-heading">
-                    <span>03</span>
-                    <h2>Template Strip</h2>
+                <div class="template-gallery" id="templateGallery">
+                    <button class="template-card active" type="button" data-template="plain" aria-pressed="true">
+                        <span class="template-card-preview preview-plain"><i></i><i></i><i></i><i></i></span>
+                        <strong>Polos</strong><small>Tanpa dekorasi</small>
+                    </button>
+                    <button class="template-card" type="button" data-template="classic" aria-pressed="false">
+                        <span class="template-card-preview preview-classic"><i></i><i></i><i></i><i></i></span>
+                        <strong>Classic</strong><small>Minimalis</small>
+                    </button>
+                    <button class="template-card" type="button" data-template="pink" aria-pressed="false">
+                        <span class="template-card-preview preview-pink"><i></i><i></i><i></i><i></i></span>
+                        <strong>Pastel Pink</strong><small>Manis dan lembut</small>
+                    </button>
+                    <button class="template-card" type="button" data-template="lilac" aria-pressed="false">
+                        <span class="template-card-preview preview-lilac"><i></i><i></i><i></i><i></i></span>
+                        <strong>Lilac</strong><small>Nuansa ungu</small>
+                    </button>
+                    <button class="template-card" type="button" data-template="mint" aria-pressed="false">
+                        <span class="template-card-preview preview-mint"><i></i><i></i><i></i><i></i></span>
+                        <strong>Mint</strong><small>Segar dan cerah</small>
+                    </button>
+                    <button class="template-card" type="button" data-template="dark" aria-pressed="false">
+                        <span class="template-card-preview preview-dark"><i></i><i></i><i></i><i></i></span>
+                        <strong>Dark</strong><small>Elegan</small>
+                    </button>
+                    <button class="template-card" type="button" data-template="floral" aria-pressed="false">
+                        <span class="template-card-preview preview-floral"><i></i><i></i><i></i><i></i></span>
+                        <strong>Floral</strong><small>Motif bunga</small>
+                    </button>
                 </div>
 
-                <p class="muted">
-                    Tempat pilihan template tambahan akan tersedia di sini.
-                </p>
-
-                <div class="template-placeholder">
-
-                    <span>✧</span>
-
-                    <div>
-                        <strong>More templates coming soon</strong>
-
-                        <small>
-                            Template baru akan ditambahkan.
-                        </small>
-                    </div>
-
+                <div class="template-preview-info">
+                    <span class="template-preview-icon">✧</span>
+                    <div><strong id="selectedTemplateName">Polos</strong><small id="selectedTemplateDescription">Menggunakan warna strip pilihanmu.</small></div>
                 </div>
-
             </aside>
 
             <section class="camera-panel panel">
-
                 <div class="camera-top">
-
-                    <div>
-                        <span class="camera-live-dot"></span>
-
-                        <strong>Camera booth</strong>
-
-                        <small id="cameraStatus">
-                            Menyiapkan kamera…
-                        </small>
-                    </div>
-
-                    <button
-                        class="icon-button"
-                        id="switchCamera"
-                        title="Ganti kamera"
-                        type="button"
-                    >
-                        ⇄
-                    </button>
-
+                    <div><span class="camera-live-dot"></span><strong>Camera booth</strong><small id="cameraStatus">Menyiapkan kamera…</small></div>
+                    <button class="icon-button" id="switchCamera" title="Ganti kamera" type="button">⇄</button>
                 </div>
 
                 <div class="camera-selector">
-
-                    <label for="cameraSelect">
-                        Pilih Kamera
-                    </label>
-
-                    <select id="cameraSelect" name="cameraSelect">
-
-                        <option value="">
-                            Klik Aktifkan Kamera terlebih dahulu
-                        </option>
-
-                    </select>
-
-                    <small class="camera-selector-hint">
-                        Pilih kamera laptop, webcam eksternal,
-                        atau perangkat kamera lain yang tersedia.
-                    </small>
-
+                    <label for="cameraSelect">Pilih Kamera</label>
+                    <select id="cameraSelect" name="cameraSelect"><option value="">Klik Aktifkan Kamera terlebih dahulu</option></select>
+                    <small class="camera-selector-hint">Pilih kamera laptop, webcam eksternal, atau perangkat kamera lain yang tersedia.</small>
                 </div>
 
                 <div class="camera-stage">
-
-                    <video
-                        id="cameraVideo"
-                        autoplay
-                        playsinline
-                        muted
-                    ></video>
-
-                    <div
-                        class="camera-placeholder"
-                        id="cameraPlaceholder"
-                    >
-
-                        <div class="camera-symbol">📷</div>
-
-                        <strong>Kamera belum aktif</strong>
-
-                        <span>
-                            Izinkan akses kamera atau unggah foto.
-                        </span>
-
-                        <button
-                            class="button button-light"
-                            id="enableCamera"
-                            type="button"
-                        >
-                            Aktifkan Kamera
-                        </button>
-
+                    <video id="cameraVideo" autoplay playsinline muted></video>
+                    <div class="camera-placeholder" id="cameraPlaceholder">
+                        <div class="camera-symbol">📷</div><strong>Kamera belum aktif</strong>
+                        <span>Izinkan akses kamera atau unggah foto.</span>
+                        <button class="button button-light" id="enableCamera" type="button">Aktifkan Kamera</button>
                     </div>
-
-                    <div
-                        class="countdown-overlay"
-                        id="countdownOverlay"
-                        hidden
-                    >
-                        3
-                    </div>
-
+                    <div class="countdown-overlay" id="countdownOverlay" hidden>3</div>
                 </div>
 
                 <div class="camera-controls">
-
-                    <button
-                        class="control-link"
-                        id="mirrorButton"
-                        type="button"
-                    >
-                        ↔ <span>Cermin</span>
-                    </button>
-
-                    <button
-                        class="shutter"
-                        id="captureButton"
-                        aria-label="Ambil foto"
-                        type="button"
-                    >
-                        <span></span>
-                    </button>
-
-                    <button
-                        class="control-link"
-                        id="retakeButton"
-                        type="button"
-                    >
-                        ⟲ <span>Ulangi sesi</span>
-                    </button>
-
+                    <button class="control-link" id="mirrorButton" type="button">↔ <span>Cermin</span></button>
+                    <button class="shutter" id="captureButton" aria-label="Ambil foto" type="button"><span></span></button>
+                    <button class="control-link" id="retakeButton" type="button">⟲ <span>Ulangi sesi</span></button>
                 </div>
-
-                <div class="camera-hint" id="cameraHint">
-                    Posisikan wajahmu di tengah, lalu tekan tombol
-                    untuk mulai mengambil foto.
-                </div>
-
+                <div class="camera-hint" id="cameraHint">Posisikan wajahmu di tengah, lalu tekan tombol untuk mulai mengambil foto.</div>
             </section>
 
             <aside class="panel result-panel">
-
-                <div class="panel-heading">
-
-                    <span>04</span>
-
-                    <h2>Hasil Foto</h2>
-
-                    <span class="photo-counter" id="photoCounter">
-                        0/4
-                    </span>
-
-                </div>
-
-                <p class="muted">
-                    Foto yang sudah diambil akan muncul di sini.
-                </p>
-
+                <div class="panel-heading"><span>04</span><h2>Hasil Foto</h2><span class="photo-counter" id="photoCounter">0/4</span></div>
+                <p class="muted">Foto yang sudah diambil akan muncul di sini.</p>
                 <div class="captured-list" id="capturedList">
-
-                    <div class="empty-captured">
-                        <span>♡</span>
-
-                        <p>Belum ada foto</p>
-
-                        <small>
-                            Foto kamu akan tampil di sini.
-                        </small>
-                    </div>
-
+                    <div class="empty-captured"><span>♡</span><p>Belum ada foto</p><small>Foto kamu akan tampil di sini.</small></div>
                 </div>
-
-                <button
-                    class="button button-outline full-button"
-                    id="clearPhotos"
-                    type="button"
-                >
-                    Hapus Semua Foto
-                </button>
-
+                <button class="button button-outline full-button" id="clearPhotos" type="button">Hapus Semua Foto</button>
                 <div class="panel-divider"></div>
-
-                <div class="panel-heading">
-                    <span>05</span>
-                    <h2>Preview Strip</h2>
-                </div>
-
+                <div class="panel-heading"><span>05</span><h2>Preview Strip</h2></div>
                 <div class="strip-preview-wrap">
-
-                    <canvas
-                        id="stripCanvas"
-                        width="600"
-                        height="1200"
-                    ></canvas>
-
+                    <canvas id="stripCanvas" class="strip-export-canvas" width="600" height="1800" aria-label="Preview photo strip FindurPhoto"></canvas>
                 </div>
-
-                <p class="preview-note">
-                    Preview diperbarui otomatis saat foto ditambahkan.
-                </p>
-
-                <button
-                    class="button button-dark full-button"
-                    id="downloadButton"
-                    type="button"
-                    disabled
-                >
-                    ↓ Download Photo Strip
-                </button>
-
-                <p class="download-note">
-                    Format JPG · Siap disimpan ke perangkat
-                </p>
-
+                <p class="preview-note">Preview diperbarui otomatis saat foto, layout, warna, atau template diubah.</p>
+                <button class="button button-dark full-button" id="downloadButton" type="button" disabled>↓ Download Photo Strip</button>
+                <p class="download-note">Format PNG · Siap disimpan ke perangkat</p>
             </aside>
-
         </div>
 
-        <footer class="studio-footer">
-            FindurPhoto <span>♡</span>
-            Make memories, keep them forever.
-        </footer>
-
+        <footer class="studio-footer">FindurPhoto <span>♡</span> Make memories, keep them forever.</footer>
     </main>
-
     <script src="studio.js"></script>
-
 </body>
 </html>
